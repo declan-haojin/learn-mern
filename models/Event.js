@@ -10,9 +10,18 @@ const EventSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    status: {
+        type: String,
+        required: true,
+        enum: ['Past', 'Upcoming', 'Canceled'],
+    },
     capacity: {
         type: Number,
         required: true,
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
     },
 });
 
