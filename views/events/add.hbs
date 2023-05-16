@@ -1,0 +1,47 @@
+<h3>Add Event</h3>
+<div class="row">
+
+    <form action="/records" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <select id="type" name="type">
+                    <option value="driver">Driver</option>
+                    <option value="packer">Packer</option>
+                    <option value="caller">Caller</option>
+                </select>
+                <label for="type">Type</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <select id="status" name="status">
+                    <option value="upcoming" selected>Upcoming</option>
+                    <option value="past">Past</option>
+                    <option value="canceled">Canceled</option>
+                </select>
+                <label for="status">Status</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field">
+                <input type="datetime-local" name="datetime">
+                <label for="datetime">Date and Time:</label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="input-field">
+                <h5>Description</h5>
+                <textarea id="body" name="body"></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

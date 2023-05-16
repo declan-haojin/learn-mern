@@ -6,9 +6,19 @@ const EventSchema = new mongoose.Schema({
         required: true,
         enum: ['Driver', 'Packer', 'Caller', 'Other'],
     },
-    date: {
+    startTime: {
         type: Date,
         required: true,
+    },
+    endTime: {
+        type: Date,
+        required: true,
+    },
+    location: {
+        type: String,
+    },
+    description: {
+        type: String
     },
     status: {
         type: String,
