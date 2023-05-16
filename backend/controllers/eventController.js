@@ -9,6 +9,10 @@ const getEvents = (req, res) => {
 // @route POST /api/events
 // @access Private
 const createEvent = (req, res) => {
+    if (!req.body.text) {
+        res.status(404);
+        throw new Error("Event text is required");
+    }
     res.status(200).json({message: "Create a new event"});
 }
 
