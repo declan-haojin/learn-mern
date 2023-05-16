@@ -52,7 +52,15 @@ const updateEvent = asyncHandler(async (req, res) => {
 // @route DELETE /api/events/:id
 // @access Private
 const deleteEvent = asyncHandler(async (req, res) => {
-    res.status(200).json({ message: `Delete event ${req.params.id}` });
+    const event = await Event.findById(req.params.id);
+
+    if (!event) {
+        res.status(400);
+        throw new Error("Event not found");
+    }
+
+    await Event.deleteOne({_id: req.params.id});
+    res.status(200).json({id: req.params.id});
 });
 
 module.exports = {
