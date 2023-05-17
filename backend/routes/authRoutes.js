@@ -22,7 +22,7 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
 // @desc    Logout user
 // @route   GET /auth/logout
 // @access  Private
-router.get('/logout', protect, (req, res) => {
+router.get('/logout', (req, res) => {
     req.logout(function(err) {
         if (err) { return next(err); }
         res.redirect('/');
