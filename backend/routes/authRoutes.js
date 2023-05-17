@@ -9,9 +9,7 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 // @desc    Google auth callback
 // @route   GET /auth/google/callback
 router.get('/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
-    // res.json({ message: "Login successful" });
     res.json({ message: "Login successful", user: req.user });
-    // res.redirect('/');
 });
 
 // @desc    Logout user
