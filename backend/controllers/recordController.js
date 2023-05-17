@@ -5,7 +5,7 @@ const Record = require("../models/recordModel");
 // @route GET /api/records
 // @access Private
 const getRecords = asyncHandler(async (req, res) => {
-    const records = await Record.find();
+    const records = await Record.find({ user: req.user._id });
 
     res.status(200).json(records);
 });
