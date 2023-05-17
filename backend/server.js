@@ -44,6 +44,7 @@ app.use(passport.session());
 app.use('/api/events', require('./routes/eventRoutes'));
 app.use('/api/users', require('./routes/userRoutes'));
 app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/records', require('./routes/recordRoutes'));
 
 
 app.listen(port, () => {
